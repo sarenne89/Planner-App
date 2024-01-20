@@ -12,6 +12,7 @@ const calendarTimesArray = [
   dayjs().hour(17).format("H A"),
 ];
 const timeSlots = $("#timeSlots");
+var savedData = JSON.parse(localStorage.getItem("savedData"));
 
 $(document).ready(function () {
   //creates calendar layout
