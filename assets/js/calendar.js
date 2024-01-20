@@ -25,6 +25,7 @@ $(document).ready(function () {
     hour.addClass(
       "hour col-2 d-flex align-items-center justify-content-center"
     );
+    hour.attr("id", "time" + [i]);
     hour.appendTo(timeSlot);
     hour.text(calendarTimesArray[i]);
     //creates the text box for the task description input
@@ -32,6 +33,7 @@ $(document).ready(function () {
     description.addClass(
       "description col-8 d-flex align-items-center justify-content-center"
     );
+    description.attr("id", "description" + [i]);
     //detects the time of day and gives classes to the description div accordingly
     if (today.format("H A") > calendarTimesArray[i]) {
       description.addClass("past");
@@ -48,10 +50,17 @@ $(document).ready(function () {
     saveButton.addClass(
       "col-2 saveBtn d-flex align-items-center justify-content-center"
     );
+    saveButton.attr("id", "save" + [i]);
     saveButton.appendTo(timeSlot);
     var saveIcon = $(
       '<i class="fa-regular fa-floppy-disk" style="color: #ffffff;"></i>'
     );
     saveButton.append(saveIcon);
   }
+
+  const allSaveButtons = $(".saveBtn");
+  allSaveButtons.on("click", function hello() {
+    console.log("hello there");
+  });
+  //end of doc.ready, functions go above here
 });
