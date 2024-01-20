@@ -32,6 +32,7 @@ $(document).ready(function () {
     description.addClass(
       "description col-8 d-flex align-items-center justify-content-center"
     );
+    //detects the time of day and gives classes to the description div accordingly
     if (today.format("H A") > calendarTimesArray[i]) {
       description.addClass("past");
     } else if (today.format("H A") === calendarTimesArray[i]) {
@@ -40,7 +41,7 @@ $(document).ready(function () {
     if (today.format("H A") < calendarTimesArray[i]) {
       description.addClass("future");
     }
-    description.attr("contenteditable: true");
+    description.attr("contenteditable", true);
     description.appendTo(timeSlot);
     //creates the save button for each time slot
     var saveButton = $("<div>");
@@ -48,5 +49,9 @@ $(document).ready(function () {
       "col-2 saveBtn d-flex align-items-center justify-content-center"
     );
     saveButton.appendTo(timeSlot);
+    var saveIcon = $(
+      '<i class="fa-regular fa-floppy-disk" style="color: #ffffff;"></i>'
+    );
+    saveButton.append(saveIcon);
   }
 });
