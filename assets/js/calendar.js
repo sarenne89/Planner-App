@@ -59,8 +59,8 @@ $(document).ready(function () {
   }
 
   const allSaveButtons = $(".saveBtn");
-  allSaveButtons.on("click", function hello() {
-    console.log("hello there");
+  allSaveButtons.on("click", function getData() {
+    console.log(this.previousSibling.textContent);
   });
   //end of doc.ready, functions go above here
 });
