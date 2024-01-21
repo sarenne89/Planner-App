@@ -15,11 +15,14 @@ textarea {
 
 header {
   text-align: center;
-  background-color: transparent;
-  color: black;
+  background-image: url(../images/background.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 0;
   border-bottom: 10px solid black;
-  padding: 60px;
+  padding: 100px;
+  color: #fff;
 }
 
 .description {
@@ -35,6 +38,10 @@ header {
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;
+}
+
+.row:last-of-type {
+  margin-bottom: 50px;
 }
 
 .hour {
