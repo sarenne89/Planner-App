@@ -30,7 +30,7 @@ MIT License
 
 ## Features
 
-A series of questions and answers giving a high score at the end of the quiz.
+A work day planner featuring dynamically generated time slots that update according to the time. Any saved tasks persist on page refresh.
 
 ## Tests
 
