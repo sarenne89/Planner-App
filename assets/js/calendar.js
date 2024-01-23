@@ -1,14 +1,14 @@
 var today = dayjs();
 const calendarTimesArray = [
-  dayjs().hour(9).format("hh A"),
-  dayjs().hour(10).format("hh A"),
-  dayjs().hour(11).format("hh A"),
-  dayjs().hour(12).format("hh A"),
-  dayjs().hour(13).format("hh A"),
-  dayjs().hour(14).format("hh A"),
-  dayjs().hour(15).format("hh A"),
-  dayjs().hour(16).format("hh A"),
-  dayjs().hour(17).format("hh A"),
+  dayjs().hour(9).format("HH 00"),
+  dayjs().hour(10).format("HH 00"),
+  dayjs().hour(11).format("HH 00"),
+  dayjs().hour(12).format("HH 00"),
+  dayjs().hour(13).format("HH 00"),
+  dayjs().hour(14).format("HH 00"),
+  dayjs().hour(15).format("HH 00"),
+  dayjs().hour(16).format("HH 00"),
+  dayjs().hour(17).format("HH 00"),
 ];
 
 const timeSlots = $("#timeSlots");
@@ -35,12 +35,12 @@ for (let i = 0; i < calendarTimesArray.length; i++) {
   //retrieves any saved data from local storage
   description.val(JSON.parse(localStorage.getItem("saveData" + [i])));
   //detects the time of day and gives classes to the description textarea accordingly
-  if (today.format("H A") > calendarTimesArray[i]) {
+  if (today.format("HH 00") > calendarTimesArray[i]) {
     description.addClass("past");
-  } else if (today.format("H A") === calendarTimesArray[i]) {
+  } else if (today.format("HH 00") === calendarTimesArray[i]) {
     description.addClass("present");
   }
-  if (today.format("H A") < calendarTimesArray[i]) {
+  if (today.format("HH 00") < calendarTimesArray[i]) {
     description.addClass("future");
   }
   description.value += JSON.parse(localStorage.getItem("saveData1"));
